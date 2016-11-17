@@ -37,8 +37,10 @@ public class ScoreFloating : MonoBehaviour
 		toRot = rightRot;
 	}
 
-	void Display (int scoreValue, int playerCorner)
+	void Display (int scoreValue, int playerCorner, Vector3 startPos)
 	{
+		thisRectTransform.position = startPos;
+
 		displayText.text = scoreValue.ToString ();
 		timer = 0;
 		wobbleTimer = 0;
@@ -76,6 +78,7 @@ public class ScoreFloating : MonoBehaviour
 					wobbleTimer = 0;
 				}
 				thisRectTransform.rotation = Quaternion.Lerp (fromRot, toRot, (wobbleTimer / wobbleTime));
+				thisRectTransform.position = Vector3.Lerp (floatPos, targetScoreRect, timer * timer / zoomTime);
 			} else {
 				if (doneFloat = false) {
 					doneFloat = true;
