@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 43c5a4231185db1489f563118f3c545c
-timeCreated: 1478282478
+guid: 04546616fae90904caeccb137c09f0fe
+timeCreated: 1479913794
 licenseType: Free
 TrueTypeFontImporter:
   serializedVersion: 4
@@ -10,7 +10,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Foo
+  - DS Accent
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 1
