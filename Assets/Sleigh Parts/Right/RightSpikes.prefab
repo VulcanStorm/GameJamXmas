@@ -21,6 +21,8 @@ GameObject:
   - 4: {fileID: 4000011061983264}
   - 33: {fileID: 33000011798166292}
   - 23: {fileID: 23000012844966938}
+  - 65: {fileID: 65000012596346154}
+  - 114: {fileID: 114000011199719574}
   m_Layer: 0
   m_Name: RightSpikes
   m_TagString: Untagged
@@ -34,8 +36,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013024289712}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 2.25, y: -0.5666667, z: 0.24999979}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -77,3 +79,31 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013024289712}
   m_Mesh: {fileID: 4300012, guid: 07bdc67b36716af4ab3e25f7f6232d7d, type: 3}
+--- !u!65 &65000012596346154
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013024289712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.99999994, y: 1, z: 6.9999995}
+  m_Center: {x: 0.49999997, y: 0, z: 0}
+--- !u!114 &114000011199719574
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013024289712}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16999c04685bd4443bcba67e75b8ea67, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damageOnHit: 20
+  damageOnStay: 10
+  onlyDamageIfMoving: 1
+  minSpeedForMoving: 2
+  canDamage: 0
