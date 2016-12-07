@@ -1,0 +1,380 @@
+fileFormatVersion: 2
+guid: 1172e68ea2ccba94eb83859adbdf03cc
+timeCreated: 1481111726
+licenseType: Free
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: Armature
+    100002: //RootNode
+    100004: ElfBase
+    100006: Hat1
+    100008: Hat2
+    100010: Head
+    100012: Hip_L
+    100014: Hip_R
+    100016: LowArm_L
+    100018: LowArm_R
+    100020: LowLeg_L
+    100022: LowLeg_R
+    100024: Shoulder_L
+    100026: Shoulder_R
+    100028: Spine
+    100030: UpArm_L
+    100032: UpArm_R
+    100034: UpLeg_L
+    100036: UpLeg_R
+    400000: Armature
+    400002: //RootNode
+    400004: ElfBase
+    400006: Hat1
+    400008: Hat2
+    400010: Head
+    400012: Hip_L
+    400014: Hip_R
+    400016: LowArm_L
+    400018: LowArm_R
+    400020: LowLeg_L
+    400022: LowLeg_R
+    400024: Shoulder_L
+    400026: Shoulder_R
+    400028: Spine
+    400030: UpArm_L
+    400032: UpArm_R
+    400034: UpLeg_L
+    400036: UpLeg_R
+    4300000: ElfBase
+    7400000: Default Take
+    7400002: RestPose
+    7400004: Walk
+    7400006: Run
+    9500000: //RootNode
+    13700000: ElfBase
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Default Take
+      takeName: Default Take
+      firstFrame: -1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L/LowLeg_L
+        weight: 1
+      - path: Armature/Hip_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R/LowLeg_R
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Head
+        weight: 1
+      - path: Armature/Spine/Head/Hat1
+        weight: 1
+      - path: Armature/Spine/Head/Hat1/Hat2
+        weight: 1
+      - path: Armature/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L/LowArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R/LowArm_R
+        weight: 1
+      - path: ElfBase
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: RestPose
+      takeName: RestPose
+      firstFrame: -1
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L/LowLeg_L
+        weight: 1
+      - path: Armature/Hip_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R/LowLeg_R
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Head
+        weight: 1
+      - path: Armature/Spine/Head/Hat1
+        weight: 1
+      - path: Armature/Spine/Head/Hat1/Hat2
+        weight: 1
+      - path: Armature/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L/LowArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R/LowArm_R
+        weight: 1
+      - path: ElfBase
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Run
+      takeName: Run
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L/LowLeg_L
+        weight: 1
+      - path: Armature/Hip_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R/LowLeg_R
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Head
+        weight: 1
+      - path: Armature/Spine/Head/Hat1
+        weight: 1
+      - path: Armature/Spine/Head/Hat1/Hat2
+        weight: 1
+      - path: Armature/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L/LowArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R/LowArm_R
+        weight: 1
+      - path: ElfBase
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Walk
+      takeName: Walk
+      firstFrame: 0
+      lastFrame: 39
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask:
+      - path: 
+        weight: 1
+      - path: Armature
+        weight: 1
+      - path: Armature/Hip_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L
+        weight: 1
+      - path: Armature/Hip_L/UpLeg_L/LowLeg_L
+        weight: 1
+      - path: Armature/Hip_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R
+        weight: 1
+      - path: Armature/Hip_R/UpLeg_R/LowLeg_R
+        weight: 1
+      - path: Armature/Spine
+        weight: 1
+      - path: Armature/Spine/Head
+        weight: 1
+      - path: Armature/Spine/Head/Hat1
+        weight: 1
+      - path: Armature/Spine/Head/Hat1/Hat2
+        weight: 1
+      - path: Armature/Spine/Shoulder_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_L/UpArm_L/LowArm_L
+        weight: 1
+      - path: Armature/Spine/Shoulder_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R
+        weight: 1
+      - path: Armature/Spine/Shoulder_R/UpArm_R/LowArm_R
+        weight: 1
+      - path: ElfBase
+        weight: 1
+      maskType: 0
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 0.2
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

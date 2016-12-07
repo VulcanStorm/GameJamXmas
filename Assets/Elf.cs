@@ -8,6 +8,7 @@ public class Elf : MonoBehaviour
 	Rigidbody thisRigidbody;
 	Transform thisTransform;
 	public Transform animTransform;
+	public Animator animController;
 	Vector3 santaDir = Vector3.zero;
 	Vector3 moveDir = Vector3.forward;
 	public float runSpeed = 2.75f;
@@ -15,15 +16,18 @@ public class Elf : MonoBehaviour
 	public float distToSanta;
 
 	Vector3 desiredDirection;
-
+	bool doRun = false;
+	bool lastRun = false;
 	public int health = 50;
 	public int score = 100;
 
 	public float sqrDistanceToFlee = 200;
 	Transform nearestSanta;
 
+
 	public ElfType elfType = ElfType.bad;
 	private static RaycastHit hit;
+	Quaternion animRot;
 
 	// Use this for initialization
 	void Start ()
@@ -31,6 +35,9 @@ public class Elf : MonoBehaviour
 		//desiredDirection = (new Vector3 (Random.Range (-1, 1), 0, Random.Range (-1, 1))).normalized;
 		thisTransform = this.transform;
 		thisRigidbody = this.GetComponent<Rigidbody> ();
+		// set the anim params
+		animController.SetBool ("Run", false);
+		animController.SetFloat ("Speed", walkSpeed);
 		// register the elf
 		elfId = ElfManager.singleton.RegisterElf (this);
 	}
@@ -53,9 +60,9 @@ public class Elf : MonoBehaviour
 
 	public void CheckForWalls (LayerMask layers)
 	{
-		if (Physics.Raycast (thisTransform.position, moveDir, out hit, 3, layers)) {
+		if (Physics.Raycast (thisTransform.position, moveDir, out hit, 4, layers)) {
 
-			desiredDirection = (desiredDirection + hit.normal).normalized;
+			desiredDirection = (desiredDirection + 2 * hit.normal).normalized;
 		}
 	}
 
@@ -67,11 +74,11 @@ public class Elf : MonoBehaviour
 		}
 	}
 
-	private void KillElf (int player)
+	private void KillElf (int controller)
 	{
 		EffectsManager.singleton.SpawnBloodSplatter (thisTransform.position - Vector3.up, moveDir);
 
-		PlayerManager.singleton.AddScoreForPlayer (player, score);
+		PlayerManager.singleton.AddScoreForController (controller, score);
 
 		Destroy (gameObject);
 	}
@@ -82,10 +89,11 @@ public class Elf : MonoBehaviour
 		GetDistToNearestSanta ();
 
 		if (distToSanta < sqrDistanceToFlee) {
+			doRun = true;
 			if (nearestSanta != null) {
 				// work out direction to santa
 				santaDir = (thisTransform.position - nearestSanta.position).normalized;
-				if (elfType != ElfType.good) {
+				if (elfType == ElfType.superBad) {
 					
 					// run behind santa if we're infront of him
 					if (Vector3.Dot (santaDir, nearestSanta.forward) > 0) {
@@ -103,15 +111,26 @@ public class Elf : MonoBehaviour
 			moveDir *= runSpeed;
 
 		} else {
+			doRun = false;
 			// just move forwards and turn randomly
 			moveDir = thisTransform.InverseTransformDirection (desiredDirection) * walkSpeed;
 
+		}
+		if (doRun != lastRun) {
+			animController.SetBool ("Run", doRun);
+			lastRun = doRun;
+			if (doRun == false) {
+				animController.SetFloat ("Speed", walkSpeed);
+			} else {
+				animController.SetFloat ("Speed", runSpeed);
+			}
 		}
 		moveDir.y = thisRigidbody.velocity.y;
 		thisRigidbody.velocity = moveDir;
 		// set the animation direction
 		if (thisRigidbody.velocity != Vector3.zero) {
-			animTransform.rotation = Quaternion.LookRotation (thisRigidbody.velocity, Vector3.up);
+			animRot = Quaternion.LookRotation (thisRigidbody.velocity, Vector3.up);
+			animTransform.rotation = Quaternion.Slerp (animTransform.rotation, animRot, Time.deltaTime * 10);
 		}
 	}
 

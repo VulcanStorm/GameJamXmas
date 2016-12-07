@@ -5,7 +5,12 @@ using System.Collections.Generic;
 public sealed class ElfManager : MonoBehaviour
 {
 
-	public int maxElves = 100;
+	public GameObject superBadElfPrefab;
+	public GameObject badElfPrefab;
+	public GameObject goodElfPrefab;
+
+	public ElfSpawnPoint[] elfSpawns;
+	public int maxElves = 150;
 	public int maxGoodElves = 50;
 	public int elfCount;
 	public int goodElfCount;
@@ -44,11 +49,6 @@ public sealed class ElfManager : MonoBehaviour
 		elfList [id] = null;
 	}
 
-	public GameObject superBadElfPrefab;
-	public GameObject badElfPrefab;
-	public GameObject goodElfPrefab;
-
-	public ElfSpawnPoint[] elfSpawns;
 
 	void Awake ()
 	{
@@ -75,7 +75,7 @@ public sealed class ElfManager : MonoBehaviour
 			for (int i = 0; i < elfSpawns.Length; i++) {
 				if (elfCount < maxElves) {
 					if (elfSpawns [i].canSpawn == true) {
-						print (i + " can spawn an elf");
+						//print (i + " can spawn an elf");
 						// get the spawn info
 						Vector3 spawnPos = elfSpawns [i].GetSpawnPoint ();
 						Quaternion spawnRotation = elfSpawns [i].GetSpawnRotation ();
@@ -105,14 +105,16 @@ public sealed class ElfManager : MonoBehaviour
 
 	void FixedUpdate ()
 	{
-		if (elfList.Count > 0) {
-			nextElfIndex++;
-			if (nextElfIndex >= elfList.Count) {
-				nextElfIndex = 0;
-			}
+		for (int i = 0; i < 5; i++) {
+			if (elfList.Count > 0) {
+				nextElfIndex++;
+				if (nextElfIndex >= elfList.Count) {
+					nextElfIndex = 0;
+				}
 
-			if (elfList [nextElfIndex] != null) {
-				elfList [nextElfIndex].CheckForWalls (elfWallLayers);
+				if (elfList [nextElfIndex] != null) {
+					elfList [nextElfIndex].CheckForWalls (elfWallLayers);
+				}
 			}
 		}
 	}
