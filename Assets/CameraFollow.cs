@@ -1,9 +1,9 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CameraFollow : MonoBehaviour
+public class CameraFollow : FourPCamera
 {
-
+	private Camera cam;
 	public Transform target;
 
 	public float distance = 6;
@@ -16,6 +16,7 @@ public class CameraFollow : MonoBehaviour
 	void Start ()
 	{
 		thisTransform = this.transform;
+
 	}
 
 	void FixedUpdate ()
@@ -28,5 +29,17 @@ public class CameraFollow : MonoBehaviour
 	{
 		
 		thisTransform.LookAt (target, target.up);
+	}
+
+	public override void SetCameraTarget (Transform t)
+	{
+		target = t;
+	}
+
+	public override void SetCameraViewRect (Rect rect)
+	{
+		// get camera and assign
+		cam = this.GetComponent<Camera> ();
+		cam.rect = rect;
 	}
 }

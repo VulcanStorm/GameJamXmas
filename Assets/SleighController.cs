@@ -32,6 +32,7 @@ public class SleighController : MonoBehaviour
 		thisTransform = transform;
 		inputs = ControllerInputManager.GetInputsForControllerNumber (controllerNumber);
 		PlayerManager.singleton.AddNewSleigh (this);
+		thisRigidbody.maxAngularVelocity = 2.5f;
 	}
 	
 	// Update is called once per frame

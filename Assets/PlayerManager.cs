@@ -10,12 +10,16 @@ public class PlayerManager : MonoBehaviour
 	public static int playerCount = -1;
 
 	public static bool[] activePlayers = new bool[4];
-
+	// maps player number to controller number
+	// e.g. controller number is at playerNumber index
+	public int[] playerControllerMapping = new int[4];
 	public List<Transform> playerList = new List<Transform> ();
 
 	public int[] scores;
 
 	public PlayerGUI[] playerGUIs;
+
+	public List<FourPCamera> playerCameras;
 
 	public Transform GetNearestSanta (Vector3 pos, out float outDist)
 	{
@@ -36,9 +40,10 @@ public class PlayerManager : MonoBehaviour
 		return returnTrans;
 	}
 
-	public void AddScoreForPlayer (int playerNum, int score)
+	public void AddScoreForController (int playerNum, int score)
 	{
-		scores [playerNum - 1] += score;
+		int scoreIndex = GetControllerNumForPlayerNum (playerNum);
+		scores [scoreIndex - 1] += score;
 	}
 
 	public void AddNewSleigh (SleighController sleigh)
@@ -49,6 +54,9 @@ public class PlayerManager : MonoBehaviour
 	void Awake ()
 	{
 		singleton = this;
+		for (int i = 0; i < 4; i++) {
+			playerControllerMapping [i] = -1;
+		}
 	}
 
 	// Use this for initialization
@@ -95,12 +103,31 @@ public class PlayerManager : MonoBehaviour
 			// if we have player 1... which we must do... then do we want to start?
 			if (activePlayers [0] == true) {
 				if (ControllerInputManager.GetInputsForControllerNumber (1).startButton) {
+					// how many players?
+					playerCount = 0;
+					for (int i = 0; i < activePlayers.Length; i++) {
+						if (activePlayers [i]) {
+							playerControllerMapping [playerCount] = i + 1;
+							playerCount++;
+						}
+					}
 					// start game
-					SpawnManager.singleton.SpawnAllPlayers ();
+					// spawn players and cameras
+					SpawnManager.singleton.SpawnAllPlayers (playerCount);
 					// now we're playing
 					GameManager.isPlaying = true;
+					// refresh the guis now the game has started
+					for (int i = 0; i < playerGUIs.Length; i++) {
+						playerGUIs [i].SetGUIVisibility ();
+					}
+					RoundTimer.singleton.StartRound ();
 				}
 			}
 		}
+	}
+
+	public static int GetControllerNumForPlayerNum (int plNum)
+	{
+		return singleton.playerControllerMapping [plNum - 1];
 	}
 }

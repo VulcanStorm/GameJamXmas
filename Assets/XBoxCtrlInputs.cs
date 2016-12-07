@@ -43,11 +43,11 @@ public sealed class XBoxCtrlInputs
 			GetPlayer2Input ();
 			break;
 		case 3:
-
+			GetPlayer3Input ();
 			break;
 
 		case 4:
-
+			GetPlayer4Input ();
 			break;
 
 		default:
@@ -99,6 +99,51 @@ public sealed class XBoxCtrlInputs
 		leftStickPressed = Input.GetKey (KeyCode.Joystick2Button8);
 		rightStickPressed = Input.GetKey (KeyCode.Joystick2Button9);
 	}
+
+	private void GetPlayer3Input ()
+	{
+		// get the input axes
+		leftStickX = Input.GetAxisRaw ("Joy3_X");
+		leftStickY = Input.GetAxisRaw ("Joy3_Y");
+		rightStickX = Input.GetAxisRaw ("Joy3_X2");
+		rightStickY = Input.GetAxisRaw ("Joy3_Y2");
+		rightTrigger = Input.GetAxisRaw ("Joy3_Fire1");
+		leftTrigger = Input.GetAxisRaw ("Joy3_Fire2");
+
+		aButton = Input.GetKey (KeyCode.Joystick3Button0);
+		bButton = Input.GetKey (KeyCode.Joystick3Button1);
+		xButton = Input.GetKey (KeyCode.Joystick3Button2);
+		yButton = Input.GetKey (KeyCode.Joystick3Button3);
+		leftBumper = Input.GetKey (KeyCode.Joystick3Button4);
+		rightBumper = Input.GetKey (KeyCode.Joystick3Button5);
+		selectButton = Input.GetKey (KeyCode.Joystick3Button6);
+		startButton = Input.GetKey (KeyCode.Joystick3Button7);
+		leftStickPressed = Input.GetKey (KeyCode.Joystick3Button8);
+		rightStickPressed = Input.GetKey (KeyCode.Joystick3Button9);
+	}
+
+	private void GetPlayer4Input ()
+	{
+		// get the input axes
+		leftStickX = Input.GetAxisRaw ("Joy4_X");
+		leftStickY = Input.GetAxisRaw ("Joy4_Y");
+		rightStickX = Input.GetAxisRaw ("Joy4_X2");
+		rightStickY = Input.GetAxisRaw ("Joy4_Y2");
+		rightTrigger = Input.GetAxisRaw ("Joy4_Fire1");
+		leftTrigger = Input.GetAxisRaw ("Joy4_Fire2");
+
+		aButton = Input.GetKey (KeyCode.Joystick4Button0);
+		bButton = Input.GetKey (KeyCode.Joystick4Button1);
+		xButton = Input.GetKey (KeyCode.Joystick4Button2);
+		yButton = Input.GetKey (KeyCode.Joystick4Button3);
+		leftBumper = Input.GetKey (KeyCode.Joystick4Button4);
+		rightBumper = Input.GetKey (KeyCode.Joystick4Button5);
+		selectButton = Input.GetKey (KeyCode.Joystick4Button6);
+		startButton = Input.GetKey (KeyCode.Joystick4Button7);
+		leftStickPressed = Input.GetKey (KeyCode.Joystick4Button8);
+		rightStickPressed = Input.GetKey (KeyCode.Joystick4Button9);
+	}
+
 	// TODO make functions for the other 2 players.
 }
 
