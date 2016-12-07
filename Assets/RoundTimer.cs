@@ -33,7 +33,7 @@ public class RoundTimer : MonoBehaviour
 	public void StartRound ()
 	{
 		timerStarted = true;
-		roundTime = 5;
+		roundTime = 150;
 		roundTimer = roundTime;
 		gameObject.SetActive (true);
 	}
